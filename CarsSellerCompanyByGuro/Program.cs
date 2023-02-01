@@ -104,7 +104,7 @@ class Program
                     {
                         Console.Write("Please enter your future password: ");
                         newPassword = Console.ReadLine()!;
-                        newPassword = user.Password!;
+                        user.Password = newPassword;
                         user.ChangePassword(newPassword);
                     }
                     else
@@ -143,6 +143,7 @@ class Program
             boughter.ShowOwnedCars();
             Console.WriteLine();
             Console.WriteLine("Choose which sellers cars you want to see.");
+            Console.WriteLine("if you want to exit press 3.");
             Console.WriteLine();
             Console.WriteLine("seller 1. ");
             seller1.ShowInformation();
@@ -157,6 +158,14 @@ class Program
             else if (userChoice == 2)
             {
                 UsersCarConfirmation(userChoice, seller2, boughter);
+            }
+            else if(userChoice == 3)
+            {
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Wrong input.");
             }
         }
     }
